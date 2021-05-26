@@ -1,4 +1,4 @@
-@extends('layouts.creatingvenue')
+@extends('layouts.main')
 
 @section('content')
     <div class="row">
@@ -11,7 +11,6 @@
             </div>
         </div>
     </div>
-
     @if ($errors->any())
         <div class="alert alert-danger">
             <strong>Whoops!</strong> There were some problems with your input.<br><br>
@@ -23,7 +22,7 @@
         </div>
     @endif
 
-    <form action="{{ route('venue.update', $project->id) }}" method="POST">
+    <form action="{{ route('venue.update', $venue->id) }}" method="POST">
         @csrf
         @method('PUT')
 
@@ -31,21 +30,21 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Name of the Venue:</strong>
-                    <input type="text" name="venue_name" value="{{ $venue->name }}" class="form-control" placeholder="Name of the Venue">
+                    <input type="text" name="venue_name" value="{{ $venue->venue_name }}" class="form-control" placeholder="Name of the Venue">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Capacity:</strong>
                     <textarea class="form-control" style="height:50px" name="capacity"
-                        placeholder="Capacity">{{ $venue->introduction }}</textarea>
+                        placeholder="Capacity">{{ $venue->capacity }}</textarea>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>State:</strong>
                     <input type="text" name="state" class="form-control" placeholder="{{ $venue->location }}"
-                        value="{{ $venue->location }}">
+                        value="{{ $venue->state }}">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
@@ -53,6 +52,13 @@
                     <strong>Location:</strong>
                     <input type="point" name="location" class="form-control" placeholder="{{ $venue->cost }}"
                         value="{{ $venue->location }}">
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>News:</strong>
+                    <input type="point" name="news" class="form-control" placeholder="{{ $venue->cost }}"
+                           value="{{ $venue->news }}">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">

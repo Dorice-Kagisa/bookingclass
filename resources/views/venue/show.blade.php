@@ -1,4 +1,4 @@
-@extends('layouts.creatingvenue')
+@extends('layouts.main')
 
 
 @section('content')

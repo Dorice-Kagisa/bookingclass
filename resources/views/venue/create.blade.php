@@ -1,4 +1,4 @@
-@extends('layouts.creatingvenue')
+@extends('layouts.main')
 
 @section('content')
     <div class="row" style="padding-top: 50px;">
@@ -48,13 +48,13 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Location:</strong>
-                    <input type="number" name="location" class="form-control" placeholder="Location">
+                    <input  name="location" class="form-control" placeholder="Location">
                 </div>
             </div>
              <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>News:</strong>
-                    <input type="text" name="location" class="form-control" placeholder="News">
+                    <input type="text" name="news" class="form-control" placeholder="News">
                 </div>
             </div>
 

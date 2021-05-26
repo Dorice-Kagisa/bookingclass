@@ -1,4 +1,4 @@
-@extends('layouts.creatingvenue')
+@extends('layouts.main')
 
 @section('content')
     <div class="row">
@@ -37,7 +37,7 @@
                 <td>{{ $venue->capacity }}</td>
                 <td>{{ $venue->state }}</td>
                 <td>{{ $venue->location }}</td>
-                <td>{{ date_format($project->created_at, 'jS M Y') }}</td>
+                <td>{{ date_format($venue->created_at, 'jS M Y') }}</td>
                 <td>
                     <form action="{{ route('venue.destroy', $venue->id) }}" method="POST">
 

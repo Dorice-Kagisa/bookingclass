@@ -50,7 +50,7 @@ class VenueController extends Controller
             'state'      =>'required',
             'location'   => 'required',
             'news'       => 'required'
-           
+
         ]);
 
         Venue::create($request->all());
@@ -101,7 +101,7 @@ class VenueController extends Controller
             'location'   => 'required',
             'news'       => 'required'
         ]);
-        $project->update($request->all());
+        $venue->update($request->all());
 
         return redirect()->route('venue.index')
             ->with('success', 'Venue updated successfully');

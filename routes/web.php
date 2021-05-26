@@ -20,8 +20,11 @@ Auth::routes();
 Route::get('/systemadmin', 'SystemadminController@index')->name('systemadmin')->middleware('systemadmin');
 Route::get('/collegeadmin', 'Collegeadmin@index')->name('collegeadmin')->middleware('collegeadmin');
 Route::get('/academicstaff', 'Academicstaff@index')->name('academicstaff')->middleware('academicstaff');
+//Route::get('/dashboard', 'DashboardController@index')->middleware(['auth'])->name('dashboard');
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    $user = \Illuminate\Support\Facades\Auth::user();
+    return view('dashboard')
+        ->with('user',$user);
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
