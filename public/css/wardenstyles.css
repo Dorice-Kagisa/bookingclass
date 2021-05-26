@@ -1,0 +1,339 @@
+@charset "UTF-8";
+
+@import
+	url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+body{
+
+}
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	box-sizing: border-box;
+	text-decoration: none;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.wrapper {
+    display: flex;
+    align-items: stretch;
+     background:#F5F5F5;
+}
+
+.top_navbar {
+	background: #888a85;
+	height: 60px;
+	display: flex;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	margin-left: 20
+}
+
+
+
+
+
+
+.top_navbar .hamburger {
+	width: 40px;
+	height: 30px;
+	background: #2157e1;
+	position: relative;
+	font-size: 28px;
+	margin-top: 13px;
+	margin-left: 10px;
+}
+
+.top_navbar .hamburger .hamburger__inner {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	cursor: pointer;
+	width: 20px;
+	height: 10px;
+}
+
+.top_navbar .hamburger__inner>div {
+	width: 20px;
+	height: 2px;
+	background: #fff;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.top_navbar .hamburger div.two {
+	top: 5px;
+	width: 20px;
+}
+
+.top_navbar .hamburger div.three {
+	top: 10px;
+	width: 20px;
+}
+
+
+
+
+.top_navbar .menu {
+	width: calc(100% - 80px);
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 20px;
+}
+
+.top_navbar .menu .logo {
+	color: #222530;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+.top_navbar .menu .right_menu ul {
+	display: flex;
+}
+
+.top_navbar .menu .right_menu ul li {
+	position: relative;
+}
+
+.top_navbar .menu .right_menu ul li .fas {
+	font-size: 22px;
+	cursor: pointer;
+	color: #222530;
+}
+
+.top_navbar .menu .right_menu ul li .profile_dd {
+	position: absolute;
+	top: 35px;
+	right: -10px;
+	background: #fff;
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+	padding: 10px 0;
+	width: 180px;
+	border-radius: 3px;
+	display: none;
+	user-select: none;
+}
+
+.top_navbar .menu .right_menu ul li .profile_dd.active {
+	display: block;
+}
+
+.top_navbar .menu .right_menu ul li .profile_dd .dd_item {
+	padding: 10px;
+	cursor: pointer;
+	color: #222530;
+}
+
+.top_navbar .menu .right_menu ul li .profile_dd .dd_item:hover {
+	background: #E0F2F1;
+}
+
+.top_navbar .menu .right_menu ul li .profile_dd:before {
+	content: "";
+	position: absolute;
+	top: -20px;
+	right: 10px;
+	border: 10px solid;
+	border-color: transparent transparent #fff transparent;
+}
+
+.main_container .sidebar {
+	margin-top:60px;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 999;
+    background: #0b111e;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+
+.main_container. sidebar.active {
+    min-width: 80px;
+    max-width: 80px;
+    text-align: center;
+}
+
+.main_container  .sidebar__inner {
+	position: relative;
+}
+
+.main_container .sidebar .profile {
+	display: flex;
+	align-items: center;
+	color: #fff;
+	padding: 20px 0;
+	white-space: nowrap;
+	transition: all 0.3s ease;
+}
+
+.main_container .sidebar .profile .img {
+	padding: 0 18px;
+}
+
+.main_container .sidebar .profile img {
+	width: 45px;
+}
+
+.main_container .sidebar .profile p:first-child {
+	font-size: 14px;
+	color: #fff;
+	margin-bottom: 3px;
+}
+
+
+
+
+.main_container .container {
+	margin-top: 60px;
+	margin-left:20%;
+	 width:auto;
+	 max-width:100%;
+	padding: 30px;
+	transition: all 0.3s ease;
+	background:#F5F5F5;
+
+}
+
+.main_container .sidebar ul li a {
+	color: #fff;
+	font-size: 18px;
+	padding: 20px 30px;
+	white-space: nowrap;
+	display: flex;
+	align-items: center;
+	margin-bottom: 1px;
+	transition: all 0.3s ease;
+}
+
+.main_container .sidebar ul li a .icon {
+	margin-right: 15px;
+	font-size: 28px;
+}
+
+.main_container .sidebar ul li a span {
+	display: inline-block;
+}
+
+.main_container .sidebar ul li a:hover, .main_container .sidebar ul li a.active
+	{
+	background: #4682B4;
+	color: #222530;
+	text-decoration: none;
+}
+
+.main_container .container .item {
+	background: #fff;
+	border: 1px solid #E0F2F1;
+	margin-bottom: 30px;
+	padding: 20px;
+	font-size: 14px;
+	line-height: 22px;
+}
+
+/* after adding active class */
+.wrapper.active .sidebar {
+	width: 80px;
+}
+
+.wrapper.active .sidebar ul li a span.title, .wrapper.active .profile_info
+	{
+	display: none;
+	color: white;
+}
+
+.wrapper.active .main_container .container {
+	width:auto;
+	margin-left: 80px;
+
+}
+@media screen and (max-width: 100%) {
+    .main_container .container {
+        width:auto%;
+    }
+}
+
+
+.footer {
+	background-color: #888a85;
+	color: white;
+	font-size: 13px;
+	position: relative;
+	margin-top: -150px; /* negative value of footer height */
+	height: 30px;
+	clear: both;
+	padding-top: 5px;
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+/*
+@media (max-width: 768px) {
+    /* 80px and its content aligned to centre. Pushing it off the screen with the
+       negative left margin
+    *
+    #sidebar.active {
+        min-width: 80px;
+        max-width: 80px;
+        text-align: center;
+        margin-left: -80px !important;
+    }
+
+
+    /* Reappearing the sidebar on toggle button click *
+    #sidebar {
+        margin-left: 0;
+    }
+
+
+    /* Toggling the sidebar header content,
+       hide the big heading [h3] and showing the small heading [strong] and vice versa
+    *
+    #sidebar .sidebar-header strong {
+        display: none;
+    }
+    #sidebar.active .sidebar-header h3 {
+        display: none;
+    }
+    #sidebar.active .sidebar-header strong {
+        display: block;
+    }
+
+    /* Downsize the navigation links font size *
+    #sidebar.active ul li a {
+        padding: 20px 10px;
+        font-size: 0.85em;
+    }
+
+    #sidebar.active ul li a i {
+        margin-right:  0;
+        display: block;
+        font-size: 1.8em;
+        margin-bottom: 5px;
+    }
+
+    /* Adjust the dropdown links padding*
+    #sidebar.active ul ul a {
+        padding: 10px !important;
+    }
+
+    /* Changing the arrow position to bottom center position,
+      translateX(50%) works with right: 50%
+      to accurately  center the arrow
+    .dropdown-toggle::after {
+        top: auto;
+        bottom: 10px;
+        right: 50%;
+        -webkit-transform: translateX(50%);
+        -ms-transform: translateX(50%);
+        transform: translateX(50%);
+    }
+}   */
