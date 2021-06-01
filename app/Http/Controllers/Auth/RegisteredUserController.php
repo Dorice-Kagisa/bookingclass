@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -50,6 +51,24 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
+        //attach roles
+        $this->attachRoles($request->all(),$user);
+
         return redirect(RouteServiceProvider::HOME);
+    }
+
+
+    //attach roles to  a user
+    public function attachRoles(array $input, Model $user){
+        $role_array = [];
+        foreach ($input as $key => $value) {
+            switch ($key)  {
+                case 'roles':
+                    $role_array = $value;
+                    break;
+            }
+        }
+        $user->roles()->sync($role_array);
+
     }
 }

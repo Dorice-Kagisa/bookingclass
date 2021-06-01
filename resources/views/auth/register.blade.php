@@ -22,10 +22,11 @@
             <div>
                 <x-label for="role" :value="__('Role ')" />
 
-                <x-input id="role" class="block mt-1 w-full" type="text" name="role" required />
+                {{ Form::select('roles[]', \App\Models\Auth\Role::all()->pluck('name','id'), [], ['class' => 'form-control', 'placeholder' => '', 'autocomplete' => 'off' , 'id' => 'roles', 'aria-describedby' => '', 'required']) }}
+
             </div>
             <!-- Name -->
-            
+
             <!-- Email Address -->
             <div class="mt-4">
                 <x-label for="email" :value="__('Email')" />

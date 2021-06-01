@@ -17,8 +17,7 @@ class VenueController extends Controller
     {
         //
          $venues = Venue::latest()->paginate(5);
-
-        return view('venue.index', compact('venues'))
+         return view('venue.index', compact('venues'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 

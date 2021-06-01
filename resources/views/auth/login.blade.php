@@ -1,8 +1,8 @@
 
     <x-auth-card>
-        
 
-        
+
+
 
 <html>
 <head>
@@ -37,7 +37,7 @@
     </span>
     <div class="input-container">
       <i class="fa fa-user icon"></i>
-       <input id="username"placeholder="Username" class="input-field form-control block mt-1 w-full " type="username" name="username" :value="old('username')" required autofocus /> 
+       <input id="username"placeholder="Username" class="input-field form-control block mt-1 w-full " type="username" name="username" :value="old('username')" required autofocus />
     </div>
 
     <div class="input-container">
@@ -46,7 +46,7 @@
                                 type="password"
                                 name="password"
                                 placeholder="Password"
-                                required autocomplete="current-password" /> 
+                                required autocomplete="current-password" />
 
     </div>
     <x-button class="btn" type="submit" class="btn btn-primary">
@@ -61,7 +61,15 @@
      @if (Route::has('password.request'))
                     <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
                         {{ __('Forgot your password?') }}
-                  
+
+          <span class="fa-stack" > <i
+        class="fa fa-circle fa-stack-2x"></i> <i
+        class="fa fa-undo fa-stack-1x fa-inverse"> </i>
+      </span></a>
+
+            <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('register') }}">
+                        {{ __('Register') }}
+
           <span class="fa-stack" > <i
         class="fa fa-circle fa-stack-2x"></i> <i
         class="fa fa-undo fa-stack-1x fa-inverse"> </i>

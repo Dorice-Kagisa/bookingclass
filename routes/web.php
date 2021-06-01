@@ -16,7 +16,13 @@ use App\Http\Controllers\VenueController;
 Route::get('/', function () {
     return view('auth.login');
 });
-Auth::routes();
+
+Route::get('/register', function () {
+    $roles = \App\Models\Auth\Role::all();
+    return view('auth.register',compact('roles'));
+
+})->name('register');
+\Illuminate\Support\Facades\Auth::routes();
 Route::get('/systemadmin', 'SystemadminController@index')->name('systemadmin')->middleware('systemadmin');
 Route::get('/collegeadmin', 'Collegeadmin@index')->name('collegeadmin')->middleware('collegeadmin');
 Route::get('/academicstaff', 'Academicstaff@index')->name('academicstaff')->middleware('academicstaff');
@@ -28,8 +34,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
-
-Route::resource('venue', VenueController::class);
-
+require __DIR__.'/Web/venue/venue.php';
 
 Route::get('/home', 'HomeController@index')->name('home');
+
